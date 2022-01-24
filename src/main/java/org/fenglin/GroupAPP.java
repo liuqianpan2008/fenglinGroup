@@ -5,8 +5,10 @@ import net.mamoe.mirai.console.plugin.jvm.JavaPlugin;
 import net.mamoe.mirai.console.plugin.jvm.JvmPluginDescriptionBuilder;
 import net.mamoe.mirai.event.GlobalEventChannel;
 import org.fenglin.Command.ForbiddenWords;
+import org.fenglin.Command.GroupVerification;
 import org.fenglin.Command.KickMeber;
 import org.fenglin.Command.Sign;
+
 import org.fenglin.Date.MySign;
 import org.fenglin.config.ToolTipsConfig;
 
@@ -26,10 +28,11 @@ public final class GroupAPP extends JavaPlugin {
         GlobalEventChannel.INSTANCE.registerListenerHost(new MyHandler());
         reloadPluginConfig(ToolTipsConfig.ToolTipsConfig);
         reloadPluginData(MySign.Sign);
+
         CommandManager.INSTANCE.registerCommand(new ForbiddenWords(),true);
         CommandManager.INSTANCE.registerCommand(new KickMeber(),true);
         CommandManager.INSTANCE.registerCommand(new Sign(),true);
-
+        CommandManager.INSTANCE.registerCommand(new GroupVerification(),true);
         getLogger().info("枫林群管已加载完成");
     }
 }
