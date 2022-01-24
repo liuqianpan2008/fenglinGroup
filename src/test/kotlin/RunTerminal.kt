@@ -22,7 +22,7 @@ suspend fun main() {
     pluginInstance.load() // 主动加载插件, Console 会调用 GroupAPP.onLoad
     pluginInstance.enable() // 主动启用插件, Console 会调用 GroupAPP.onEnable
 
-    val bot = MiraiConsole.addBot(1152259392, "13393280310a").alsoLogin() // 登录一个测试环境的 Bot
+    val bot = MiraiConsole.addBot(, "").alsoLogin() // 登录一个测试环境的 Bot
 
     MiraiConsole.job.join()
 }
